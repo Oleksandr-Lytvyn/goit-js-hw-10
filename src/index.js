@@ -19,26 +19,15 @@ function onInput(event) {
 function createMarkupList(event) {
   let markupString = '';
   const countryListRef = document.querySelector('.country-list');
-  //   console.log(countryListRef);
   if (event.length <= 10) {
     for (let i = 0; i < event.length; i++) {
-      const capital = event[0].capital[0];
-      const population = event[0].population;
-      const country = event[0].name.official;
-      const languages = Object.values(event[0].languages)[0];
-      const flag = event[0].flag;
-      //   console.log(capital);
-      //   console.log(population);
-      //   console.log(country);
-      //   console.log(languages);
-      //   console.log(flag);
+      const capital = event[i].capital[0];
+      const population = event[i].population;
+      const country = event[i].name.official;
+      const languages = Object.values(event[i].languages)[0];
+      const flag = event[i].flag;
       markupString += `<li>
-        <h3>Country:${country}</h3>
-        <p>Flag:${flag}</p>
-        <p>Capital:${capital}</p>
-        <p>Population:${population}</p>
-        <p>Languages:${languages}</p>
-      </li>
+        <h3>${flag}${country}</h3>
     </ul>`;
     }
     // console.log(markupString);
@@ -63,8 +52,8 @@ function createMarkupInfo(event) {
     console.log(flag);
     for (let i = 0; i < event.length; i++) {
       markupString += `<li>
-        <h3>Country:${country}</h3>
-        <p>Flag:${flag}</p>
+        <h3>${flag}${country}</h3>
+ 
         <p>Capital:${capital}</p>
         <p>Population:${population}</p>
         <p>Languages:${languages}</p>
