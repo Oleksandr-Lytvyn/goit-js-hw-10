@@ -30,7 +30,8 @@ function createMarkupList(event) {
       const country = event[i].name.official;
       const flag = event[i].flag;
       markupString += `<li>
-        <h3>${flag}${country}</h3>
+      <span class="flag">${flag}</span>
+        <h3>${country}</h3>
     </ul>`;
     }
     countryListRef.innerHTML = markupString;
@@ -46,8 +47,9 @@ function createMarkupInfo(event) {
     const languages = Object.values(event[0].languages)[0];
     const flag = event[0].flag;
     for (let i = 0; i < event.length; i++) {
-      markupString += `<li>
-        <h3>${flag}${country}</h3>
+      markupString += `<li class="card-info">
+        <h1>${country}</h1>
+      <div class="flag-card">${flag}</div>
         <p>Capital:${capital}</p>
         <p>Population:${population}</p>
         <p>Languages:${languages}</p>
